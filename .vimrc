@@ -1,0 +1,1 @@
+stdpath('config') . '/init.vim'
