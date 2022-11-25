@@ -7,13 +7,13 @@
   local -i MBEGIN MEND OPTIND
   local MATCH REPLY OPTARG IFS=$' \t\n\0'
   typeset -gi __p9k_instant_prompt_disabled=1
-  [[ $ZSH_VERSION == 5.8 && $ZSH_PATCHLEVEL == ubuntu/5.8-3ubuntu1.1 &&
+  [[ $ZSH_VERSION == 5.8.1 && $ZSH_PATCHLEVEL == ubuntu/5.8.1-1 &&
      -z ${(M)TERM:#(screen*|tmux*)} &&
      ${#${(M)VTE_VERSION:#(<1-4602>|4801)}} == 0 &&
      $POWERLEVEL9K_DISABLE_INSTANT_PROMPT != 'true' &&
      $POWERLEVEL9K_INSTANT_PROMPT != 'off' ]] || return
-  typeset -g __p9k_instant_prompt_param_sig=$'v137\C-A5.8\C-Aubuntu/5.8-3ubuntu1.1\C-A\C-A63\C-Adave%\C-A\C-A\C-A\C-A\C-A\C-A\C-A1\C-A0\C-A0\C-A\C-A%B%S%#%s%b\C-A1\C-AUTF-8\C-A\C-A\C-A0\C-A1\C-A/home/dave/.config/.oh-my-zsh/custom/themes/powerlevel10k\C-A\C-A\C-A\C-A\C-A1\C-A256\C-A0\C-A\C-A3\C-Ad h m s\C-A0\C-A5\C-A/home/dave/.p10k.zsh\C-A\C-A%F{7}%n%f%F{242}@%m%f\C-A\C-A%F{242}%n@%m%f\C-A4\C-Atrue\C-Aquiet\C-A\C-Adir\C-Bvcs\C-Bnewline\C-Bprompt_char\C-A\C-A\C-A \C-Afalse\C-A❮\C-A1\C-A❯\C-A1\C-A❮\C-A1\C-A❮\C-A5\C-A❯\C-A5\C-A❮\C-A5\C-Afalse\C-A\C-Acommand_execution_time\C-Bvirtualenv\C-Bcontext\C-Btime\C-Bnewline\C-A\C-A\C-A \C-A242\C-A%D{%H:%M:%S}\C-Afalse\C-Aalways\C-A\C-A@\C-A1\C-A1\C-A${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }\C-A*\C-A242\C-Avcs-detect-changes\C-Bgit-untracked\C-Bgit-aheadbehind\C-A6\C-A:⇣\C-A\C-A0\C-A6\C-A:⇡\C-A\C-A\C-A\C-A242\C-A\C-A\C-Afalse\C-A'
-  local gitstatus_dir=/home/dave/.config/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus
+  typeset -g __p9k_instant_prompt_param_sig=$'v137\C-A5.8.1\C-Aubuntu/5.8.1-1\C-A\C-A63\C-Adave%\C-A\C-A\C-A\C-A\C-A\C-A\C-A1\C-A0\C-A0\C-A\C-A%B%S%#%s%b\C-A1\C-AUTF-8\C-A\C-A\C-A0\C-A1\C-A/home/dave/.config/.zsh/.oh-my-zsh/custom/themes/powerlevel10k\C-A\C-A\C-A\C-A\C-A1\C-A256\C-A0\C-A\C-A3\C-Ad h m s\C-A0\C-A5\C-A/home/dave/.config/.zsh/.p10k.zsh\C-A\C-A%F{7}%n%f%F{242}@%m%f\C-A\C-A%F{242}%n@%m%f\C-A4\C-Atrue\C-Aquiet\C-A\C-Adir\C-Bvcs\C-Bnewline\C-Bprompt_char\C-A\C-A\C-A \C-Afalse\C-A❮\C-A1\C-A❯\C-A1\C-A❮\C-A1\C-A❮\C-A5\C-A❯\C-A5\C-A❮\C-A5\C-Afalse\C-A\C-Acommand_execution_time\C-Bvirtualenv\C-Bcontext\C-Btime\C-Bnewline\C-A\C-A\C-A \C-A242\C-A%D{%H:%M:%S}\C-Afalse\C-Aalways\C-A\C-A1\C-A1\C-A@\C-A${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }\C-A*\C-A242\C-Avcs-detect-changes\C-Bgit-untracked\C-Bgit-aheadbehind\C-A6\C-A:⇣\C-A\C-A0\C-A6\C-A:⇡\C-A\C-A\C-A\C-A242\C-A\C-A\C-Afalse\C-A'
+  local gitstatus_dir=/home/dave/.config/.zsh/.oh-my-zsh/custom/themes/powerlevel10k/gitstatus
   local gitstatus_header=\#\ 3
   local -i ZLE_RPROMPT_INDENT=1
   local PROMPT_EOL_MARK=%B%S%\#%s%b

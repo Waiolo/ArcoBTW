@@ -1,3 +1,9 @@
+
+##############################
+#    Dave dot-files 2022   ###
+##############################
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,35 +11,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.config/.oh-my-zsh"
+#################
+#  Path zsh   ###
+export ZSH="$HOME/.config/.zsh/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+#################
+#    Theme    ###
+#################
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
-
-
-
-# Which plugins would you like to load?
-plugins=(
-	git
-	autojump
-	rsync python
-	mercurial
-	npm
-	ruby
-	zsh-shift-select
-	copyfile
-	dirhistory
-		)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -51,16 +41,23 @@ else
   export EDITOR='mvim'
 fi
 
-
-[[ -f ~/.config/.zsh/aliases.zsh ]] && source ~/.config/.zsh/aliases.zsh
-[[ -f ~/.config/.zsh/functions.zsh ]] && source ~/.config/.zsh/functions.zsh
-[[ -f ~/.config/.zsh/nvm.zsh ]] && source ~/.config/.zsh/nvm.zsh
-[[ -f ~/.config/.zsh/wsl2fix.zsh ]] && source ~/.config/.zsh/wsl2fix.zsh
-
 #################
 #    PLUGINS    #
 #################
-source ~/.config/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.config/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+plugins=(
+	git
+	autojump
+	rsync python
+	mercurial
+	npm
+	ruby
+	copyfile
+	dirhistory
+  	zsh-autosuggestions
+		)
 
 #####################
 # ENV VARIABLE      #
@@ -70,11 +67,7 @@ export VISUAL=$EDITOR
 export PAGER='less'
 export SHELL='/bin/zsh'
 export LANG='it_IT.UTF-8'
-export LC_ALL='it_IT.UTF-8'
-export BAT_THEME="gruvbox-dark"
-if [[ ! $(tmux ls) ]] 2> /dev/null; then
-  tmux new -s λ
-fi
+
 
 #####################
 # COLORING          #
@@ -84,9 +77,14 @@ autoload colors && colors
 #####################
 # ALIASES           #
 #####################
+
+[[ -f $HOME/.config/.zsh/aliases.zsh ]] && source $HOME/.config/.zsh/aliases.zsh
+[[ -f $HOME/.config/.zsh/functions.zsh ]] && source $HOME/.config/.zsh/functions.zsh
+[[ -f $HOME/.config/.zsh/nvm.zsh ]] && source $HOME/.config/.zsh/nvm.zsh
+[[ -f $HOME/.config/.zsh/wsl2fix.zsh ]] && source $HOME/.config/.zsh/wsl2fix.zsh
 source $HOME/.config/.zsh_aliases
 alias empty="cat /dev/null > "
-alias sourcezshrc="source ~/.zshrc"
+
 #####################
 # FANCY-CTRL-Z      #
 #####################
@@ -129,10 +127,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
 
-
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
+[[ ! -f $HOME/.config/.zsh/.p10k.zsh ]] || source $HOME/.config/.zsh/.p10k.zsh
 

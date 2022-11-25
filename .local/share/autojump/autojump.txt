@@ -1,1 +1,5 @@
-10.0	/home/dave/old
+10.0	/home/dave/logo-ls_Linux_x86_64
+10.0	/home/dave/.config
+10.0	/home/dave/.config/.zsh
+10.0	/home/dave/Documents
+14.142135623730951	/home/dave/.cache
